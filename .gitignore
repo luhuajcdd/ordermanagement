@@ -1,12 +1,24 @@
 
 *.class
 
-target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 
-target/classes/log4j.xml
 
-target/m2e-wtp/web-resources/META-INF/maven/com.dehua/order/pom.properties
+target/*
 
-target/m2e-wtp/web-resources/META-INF/maven/com.dehua/order/pom.xml
+*.jar
 
-target/test-classes/log4j.xml
+target/order-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/appServlet/servlet-context.xml
+
+target/order-1.0.0-BUILD-SNAPSHOT/WEB-INF/spring/root-context.xml
+
+target/order-1.0.0-BUILD-SNAPSHOT/WEB-INF/views/home.jsp
+
+target/order-1.0.0-BUILD-SNAPSHOT/WEB-INF/web.xml
+
+target/order-1.0.0-BUILD-SNAPSHOT/WEB-INF/classes/log4j.xml
+
+target/tomcat/conf/tomcat-users.xml
+
+target/tomcat/conf/web.xml
+
+target/tomcat/work/localEngine/localhost/order/org/apache/jsp/WEB_002dINF/views/home_jsp.java
