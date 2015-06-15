@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.dehua.order.model.pojo.User;
+
 /**
  * Handles requests for the application home page.
  */
@@ -32,8 +34,18 @@ public class HomeController {
 		String formattedDate = dateFormat.format(date);
 		
 		model.addAttribute("serverTime", formattedDate );
+		model.addAttribute("a", "test" );
+		
+		logger.info("model {}.", model.getClass().getName());
 		
 		return "home";
+	}
+	
+	@RequestMapping(value = "/user", method = RequestMethod.GET)
+	public String home(Locale locale, User user) {
+		
+		user.name = "dehua";
+		return "user";
 	}
 	
 }

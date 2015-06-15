@@ -13,6 +13,41 @@ public class User {
 	public String zipCode;//邮编
 	public String phone;//联系电话
 	public String mobilePhone;//手机
+	public long getId() {
+		return id;
+	}
+	public String getName() {
+		return name;
+	}
+	public UserType getType() {
+		return type;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public String getReceiverCountry() {
+		return receiverCountry;
+	}
+	public String getReceiverProvince() {
+		return receiverProvince;
+	}
+	public String getReceiveCity() {
+		return receiveCity;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public String getZipCode() {
+		return zipCode;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public String getMobilePhone() {
+		return mobilePhone;
+	}
+	
+	
 	
 }
 
