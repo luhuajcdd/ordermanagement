@@ -1,4 +1,4 @@
-package com.dehua.model.pojo;
+package com.dehua.order.model.pojo;
 
 public class Product {
 

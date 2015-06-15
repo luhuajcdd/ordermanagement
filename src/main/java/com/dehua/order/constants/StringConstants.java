@@ -1,4 +1,4 @@
-package com.dehua.constants;
+package com.dehua.order.constants;
 
 public class StringConstants {
 

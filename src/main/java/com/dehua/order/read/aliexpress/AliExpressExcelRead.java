@@ -1,4 +1,4 @@
-package com.dehua.read.aliexpress;
+package com.dehua.order.read.aliexpress;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -12,15 +12,15 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 
-import com.dehua.constants.StringConstants.LogisticsCon;
-import com.dehua.constants.StringConstants.OrderStatusCon;
-import com.dehua.constants.StringConstants.ProductCon;
-import com.dehua.model.pojo.Logistics;
-import com.dehua.model.pojo.OrderProduct;
-import com.dehua.model.pojo.OrderStatus;
-import com.dehua.model.pojo.User;
-import com.dehua.model.pojo.UserType;
-import com.dehua.read.ExcelRead;
+import com.dehua.order.constants.StringConstants.LogisticsCon;
+import com.dehua.order.constants.StringConstants.OrderStatusCon;
+import com.dehua.order.constants.StringConstants.ProductCon;
+import com.dehua.order.model.pojo.Logistics;
+import com.dehua.order.model.pojo.OrderProduct;
+import com.dehua.order.model.pojo.OrderStatus;
+import com.dehua.order.model.pojo.User;
+import com.dehua.order.model.pojo.UserType;
+import com.dehua.order.read.ExcelRead;
 import com.dehua.util.TimeUtil;
 
 public class AliExpressExcelRead extends ExcelRead<AliExpressOrder> {

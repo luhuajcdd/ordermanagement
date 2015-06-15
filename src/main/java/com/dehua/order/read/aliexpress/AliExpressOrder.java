@@ -1,11 +1,11 @@
-package com.dehua.read.aliexpress;
+package com.dehua.order.read.aliexpress;
 
 import java.util.List;
 
-import com.dehua.model.pojo.Logistics;
-import com.dehua.model.pojo.Order;
-import com.dehua.model.pojo.OrderProduct;
-import com.dehua.model.pojo.User;
+import com.dehua.order.model.pojo.Logistics;
+import com.dehua.order.model.pojo.Order;
+import com.dehua.order.model.pojo.OrderProduct;
+import com.dehua.order.model.pojo.User;
 
 public class AliExpressOrder extends Order{
 	
