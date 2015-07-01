@@ -24,26 +24,31 @@ public abstract class ExcelRead<T> {
      * @throws IOException
      */
     public List<T> readXls(InputStream inputStream) throws IOException {
-        HSSFWorkbook hssfWorkbook = new HSSFWorkbook(inputStream);
-        List<T> list = new ArrayList<>();
-        // Read the Sheet
-        for (int numSheet = 0; numSheet < hssfWorkbook.getNumberOfSheets(); numSheet++) {
-            HSSFSheet hssfSheet = hssfWorkbook.getSheetAt(numSheet);
-            if (hssfSheet == null) {
-                continue;
-            }
-            // Read the Row
-            for (int rowNum = 1; rowNum <= hssfSheet.getLastRowNum(); rowNum++) {
-                HSSFRow row = hssfSheet.getRow(rowNum);
-                if (row != null) {
-                	T t = get(row);
-                	if(t != null){
-                		list.add(t);
-                	}
-                }
-            }
-        }
-        return list;
+    	HSSFWorkbook hssfWorkbook = null;
+    	try{
+	        hssfWorkbook = new HSSFWorkbook(inputStream);
+	        List<T> list = new ArrayList<>();
+	        // Read the Sheet
+	        for (int numSheet = 0; numSheet < hssfWorkbook.getNumberOfSheets(); numSheet++) {
+	            HSSFSheet hssfSheet = hssfWorkbook.getSheetAt(numSheet);
+	            if (hssfSheet == null) {
+	                continue;
+	            }
+	            // Read the Row
+	            for (int rowNum = 1; rowNum <= hssfSheet.getLastRowNum(); rowNum++) {
+	                HSSFRow row = hssfSheet.getRow(rowNum);
+	                if (row != null) {
+	                	T t = get(row);
+	                	if(t != null){
+	                		list.add(t);
+	                	}
+	                }
+	            }
+	        }
+	        return list;
+    	}finally{
+    		hssfWorkbook.close();
+    	}
     }
 
     public abstract T get(Row row);
@@ -106,26 +111,31 @@ public abstract class ExcelRead<T> {
      * @throws IOException
      */
     public List<T> readXlsx(InputStream inputStream) throws IOException {
-        XSSFWorkbook xssfWorkbook = new XSSFWorkbook(inputStream);
-        List<T> list = new ArrayList<>();
-        // Read the Sheet
-        for (int numSheet = 0; numSheet < xssfWorkbook.getNumberOfSheets(); numSheet++) {
-            XSSFSheet xssfSheet = xssfWorkbook.getSheetAt(numSheet);
-            if (xssfSheet == null) {
-                continue;
-            }
-            // Read the Row
-            for (int rowNum = 1; rowNum <= xssfSheet.getLastRowNum(); rowNum++) {
-                XSSFRow xssfRow = xssfSheet.getRow(rowNum);
-                if (xssfRow != null) {
-                	T t = get(xssfRow);
-                	if(t != null){
-                		list.add(t);
-                	}
-                }
-            }
+        XSSFWorkbook xssfWorkbook = null;
+        try{
+	        xssfWorkbook = new XSSFWorkbook(inputStream);
+	        List<T> list = new ArrayList<>();
+	        // Read the Sheet
+	        for (int numSheet = 0; numSheet < xssfWorkbook.getNumberOfSheets(); numSheet++) {
+	            XSSFSheet xssfSheet = xssfWorkbook.getSheetAt(numSheet);
+	            if (xssfSheet == null) {
+	                continue;
+	            }
+	            // Read the Row
+	            for (int rowNum = 1; rowNum <= xssfSheet.getLastRowNum(); rowNum++) {
+	                XSSFRow xssfRow = xssfSheet.getRow(rowNum);
+	                if (xssfRow != null) {
+	                	T t = get(xssfRow);
+	                	if(t != null){
+	                		list.add(t);
+	                	}
+	                }
+	            }
+	        }
+	        return list;
+        }finally{
+        	xssfWorkbook.close();
         }
-        return list;
     }
    
     

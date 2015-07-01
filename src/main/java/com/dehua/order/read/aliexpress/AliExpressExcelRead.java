@@ -15,11 +15,11 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import com.dehua.order.constants.StringConstants.LogisticsCon;
 import com.dehua.order.constants.StringConstants.OrderStatusCon;
 import com.dehua.order.constants.StringConstants.ProductCon;
-import com.dehua.order.model.pojo.Logistics;
-import com.dehua.order.model.pojo.OrderProduct;
-import com.dehua.order.model.pojo.OrderStatus;
-import com.dehua.order.model.pojo.User;
-import com.dehua.order.model.pojo.UserType;
+import com.dehua.order.model.Logistics;
+import com.dehua.order.model.OrderProduct;
+import com.dehua.order.model.OrderStatus;
+import com.dehua.order.model.User;
+import com.dehua.order.model.UserType;
 import com.dehua.order.read.ExcelRead;
 import com.dehua.util.TimeUtil;
 

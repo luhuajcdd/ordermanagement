@@ -1,4 +1,4 @@
-package com.dehua.order.model.pojo;
+package com.dehua.order.model;
 
 public class User {
 
