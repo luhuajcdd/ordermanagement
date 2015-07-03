@@ -8,9 +8,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class NavigationController {
 
-	@RequestMapping(value={"/", "home"}, method=RequestMethod.GET)
+	@RequestMapping(value={"/", "upload/ali_order"}, method=RequestMethod.GET)
 	public ModelAndView index() {
-		return new ModelAndView("home");
+		return new ModelAndView("upload/ali_order");
 	}
 	
 }

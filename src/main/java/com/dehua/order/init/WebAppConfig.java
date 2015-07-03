@@ -17,6 +17,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
@@ -94,6 +95,15 @@ public class WebAppConfig {
 		source.setBasename(env.getRequiredProperty("message.source.basename"));
 		source.setUseCodeAsDefaultMessage(true);
 		return source;
+	}
+	
+	@Bean(name="multipartResolver")
+	public CommonsMultipartResolver setupMultipartResolver(){
+		CommonsMultipartResolver resolver = new CommonsMultipartResolver();
+		resolver.setDefaultEncoding("UTF-8");
+		resolver.setMaxUploadSize(10485760000L);
+		resolver.setMaxInMemorySize(40960);
+		return resolver;
 	}
 
 }
