@@ -2,6 +2,7 @@ package com.dehua.order.controller.upload;
 
 import java.io.File;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -9,9 +10,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.dehua.order.model.User;
+import com.dehua.order.service.UserService;
+
 @Controller("aliOrderUploadController")
 @RequestMapping(value="/ali")
 public class AliOrderUploadController {
+	
+	@Autowired
+	private UserService userService;
+	
 	// 处理文件上传一  
     @RequestMapping(value = "fileUpload", method = RequestMethod.POST)  
     public ModelAndView fileUpload(  
@@ -35,6 +43,13 @@ public class AliOrderUploadController {
                 e.printStackTrace();  
             }  */
         }  
+        
+        //insert user
+        User user = new User();
+        user.name = "dehua";
+        user = userService.create(user);
+        System.out.println(user.toString());
+        
         return new ModelAndView("home");  
     }
 }

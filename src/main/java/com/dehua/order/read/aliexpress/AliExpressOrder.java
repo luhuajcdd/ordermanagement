@@ -5,12 +5,12 @@ import java.util.List;
 import com.dehua.order.model.Logistics;
 import com.dehua.order.model.Order;
 import com.dehua.order.model.OrderProduct;
-import com.dehua.order.model.User;
+import com.dehua.order.model.OrderUser;
 
 public class AliExpressOrder extends Order{
 	
-	public User orderPerson; //负责人	
-	public User buyer; //买家
+	public OrderUser orderPerson; //负责人	
+	public OrderUser buyer; //买家
 	public String email; //买家邮箱
 	public long orderTime; //下单时间
 	public long payTime;//付款时间
